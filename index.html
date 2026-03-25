@@ -2979,14 +2979,14 @@ function setMobileNav(btn) {
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
 <script>
-const supabase = supabase.createClient(
+const client = supabase.createClient(
   'https://shlbeyclgxfdvzjaiweg.supabase.co',
   'sb_publishable_yiRVh2APc2xyDgvXNMgs6g_IiWprghf'
 );
 
 // EXEMPLO: salvar cliente
 async function salvarCliente() {
-  const { data, error } = await supabase
+  const { data, error } = await client
     .from('clientes')
     .insert([
       { nome: 'Teste', processo: '123' }
